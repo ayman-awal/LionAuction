@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+    <h2>List an item for auction:</h2>
+
+    <div>
+        <form action="/sellersListing" method="POST">
+            <div class="form-group">
+                <label for="AuctionTitle">Auction Title:</label>
+                <input type="text" name="AuctionTitle" required class="form-control">
+
+                <label for="ProductName">Product Name:</label>
+                <input type="text" name="ProductName" required class="form-control">
+
+                <label for="Category">Category:</label>
+                <select name="Category" required class="form-control">
+                    {% for res in result %}
+                        <option value="{{ res }}">{{ res }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="Quantity">Quantity:</label>
+                <input type="text" name="Quantity" required class="form-control">
+
+                <label for="ReservePrice">Reserve Price:</label>
+                <input value="$" type="text" name="ReservePrice" required class="form-control">
+
+                <label for="MaxBids">Max Bids:</label>
+                <input type="text" name="MaxBids" required class="form-control">
+
+                <label for="ProductDescription">Product Description:</label>
+                <textarea name="ProductDescription" required class="form-control"></textarea>
+
+                <a href="sellers_myListings"><button type="submit" class="btn btn-primary">List</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

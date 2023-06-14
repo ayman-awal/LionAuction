@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}Account Page{% endblock %}
+{% block mainContent %}
+    <h2>Sellers Account</h2>
+    <br>
+    <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+        <h3 style="font-size: 18px; margin: 10px 0;">Bank Routing Number: {{ result[0] }}</h3>
+        <h3 style="font-size: 18px; margin: 10px 0;">Bank Account Number: {{ result[1] }}</h3>
+        <h3 style="font-size: 18px; margin: 10px 0;">Balance: {{ result[2] }}</h3>
+        <a class="btn btn-primary" href="updateSellersAccount">Update Information</a>
+    </div>
+
+{% endblock %}

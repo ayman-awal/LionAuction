@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block title %}Home Page{% endblock %}
+{% block mainContent %}
+
+    <div class="container">
+    <br>
+  <h2>Home Page</h2>
+<br>
+  <div class="card-columns">
+      <a href="categories">
+          <div class="card bg-secondary">
+            <div class="card-body text-center">
+                <p style="color: azure" class="card-text">Categories</p>
+            </div>
+          </div>
+      </a>
+
+      <br>
+      <a href="bidder_account">
+    <div class="card bg-warning">
+      <div class="card-body text-center">
+        <p style="color: azure" class="card-text">Account</p>
+      </div>
+    </div>
+          </a>
+      <br>
+      <a href="myBids">
+    <div class="card bg-success">
+      <div class="card-body text-center">
+        <p style="color: azure" class="card-text">My Bids</p>
+      </div>
+    </div>
+          </a>
+      <br>
+      <a href="checkSell">
+    <div class="card bg-danger">
+      <div class="card-body text-center">
+        <p style="color: azure"  class="card-text">Sell Products</p>
+      </div>
+    </div>
+          </a>
+
+  </div>
+</div>
+
+{% endblock %}

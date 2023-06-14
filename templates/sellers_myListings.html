@@ -1,0 +1,151 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+    <h2>My Listings</h2>
+    <br>
+    <h3>Active Listings</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Listing ID</th>
+                <th scope="col">Category</th>
+                <th scope="col">Auction Title</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Max bids</th>
+                <th scope="col">Reserve Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for status in status1 %}
+                <tr>
+                    <td>{{ status[1] }}</td>
+                    <td>{{ status[2] }}</td>
+                    <td>{{ status[3] }}</td>
+                    <td>{{ status[4] }}</td>
+                    <td>{{ status[9] }}</td>
+                    <td>{{ status[8] }}</td>
+                    <td>{{ status[7] }}</td>
+                    <td>{{ status[6] }}</td>
+                    <form action="/process" method="POST">
+                        <input type="hidden" name="ID" value="{{ status[1] }}">
+                        <td><button class="btn btn-primary" type="submit">Edit</button></td>
+                    </form>
+                    <form action="/deleteListing" method="POST">
+                        <input type="hidden" name="ID" value="{{ status[1] }}">
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" type="submit">Delete</button></td>
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Are You Sure You Want To Remove Patient?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body" align="center">
+                                    <label for="reason">Reason</label>
+                                    <input type="text" name="reason" required class="form-control">
+                                </div>
+                                <div class="modal-footer" align="center">
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <br>
+    <h3>Inactive Listings</h3>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Listing ID</th>
+                <th scope="col">Category</th>
+                <th scope="col">Auction Title</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Max bids</th>
+                <th scope="col">Reserve Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for status in status2 %}
+                <tr>
+                    <td>{{ status[1] }}</td>
+                    <td>{{ status[2] }}</td>
+                    <td>{{ status[3] }}</td>
+                    <td>{{ status[4] }}</td>
+                    <td>{{ status[9] }}</td>
+                    <td>{{ status[8] }}</td>
+                    <td>{{ status[7] }}</td>
+                    <td>{{ status[6] }}</td>
+                    <form action="/process" method="POST">
+                        <input type="hidden" name="ID" value="{{ status[1] }}">
+                        <td><button class="btn btn-primary" type="submit">Edit</button></td>
+                    </form>
+                    <form action="/deleteListing" method="POST">
+                        <input type="hidden" name="ID" value="{{ status[1] }}">
+                        <td><button class="btn btn-primary" type="submit">Delete</button></td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <h3>Sold Listings</h3>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Listing ID</th>
+                <th scope="col">Category</th>
+                <th scope="col">Auction Title</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Max bids</th>
+                <th scope="col">Reserve Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for status in status2 %}
+                <tr>
+                    <td>{{ status[1] }}</td>
+                    <td>{{ status[2] }}</td>
+                    <td>{{ status[3] }}</td>
+                    <td>{{ status[4] }}</td>
+                    <td>{{ status[9] }}</td>
+                    <td>{{ status[8] }}</td>
+                    <td>{{ status[7] }}</td>
+                    <td>{{ status[6] }}</td>
+
+                    <form action="/process" method="POST">
+                        <input type="hidden" name="ID" value="{{ status[1] }}">
+                        <td><button class="btn btn-primary" type="submit">Delete</button></td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<br>
+    <br>
+<a href="sellersHome" class="btn btn-primary">Go Back</a>
+
+{% endblock %}

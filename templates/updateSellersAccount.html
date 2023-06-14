@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+    <h2>Sellers Account Update</h2>
+    <div>
+        <form action="/updateSellersAccount" method="POST">
+            <div class="form-group">
+                <label for="bankRoutingNumber">Bank Routing Number:</label>
+                <input type="text" name="bankRoutingNumber" required class="form-control" value="{{ result[0] }}">
+
+                <label for="bankAccountNumber">Bank Account Number:</label>
+                <input type="text" name="bankAccountNumber" required class="form-control" value="{{ result[1] }}">
+
+                <a href="sellersAccount"><button type="submit" class="btn btn-primary">Update</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

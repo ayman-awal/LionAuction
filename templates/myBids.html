@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+    <h2>My bids</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Bid ID</th>
+                <th scope="col">Seller Email</th>
+                <th scope="col">Bid Price</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Max bids</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for res in result %}
+                <tr>
+                    <td>{{ res[0] }}</td>
+                    <td>{{ res[1] }}</td>
+                    <td>{{ res[2] }}</td>
+                    <td>{{ res[3] }}</td>
+                    <td>{{ res[4] }}</td>
+                    <td>{{ res[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

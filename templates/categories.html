@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+
+    <h1>Categories</h1>
+
+    {% for res in result %}
+        <form action="/categories" method="POST">
+            <input type="hidden" name="button_name" value="{{ res }}">
+            <button type="submit" class="btn btn-success" name="submit-button" value='lists'><p>{{ res }}</p></button>
+            <button type="submit" class="btn btn-success" name="submit-button" value="expand"><p>></p></button>
+        </form>
+    {% endfor %}
+
+
+{% endblock %}

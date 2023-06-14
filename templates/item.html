@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+
+<h1>Items</h1>
+
+    <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+        <div class="product">
+            <p style="font-size: 24px; margin-top: 0;"><b>Product Title</b>: {{ result[4] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Product Description</b>: {{ result[5] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Product Price</b>: {{ result[8] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Category:</b> {{ result[2] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Product Name:</b> {{ result[4] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Status:</b> {{ result[9] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Bids:</b> {{ result[8] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Quantity:</b> {{ result[6] }}</p>
+            <p style="font-size: 18px; margin: 5px 0;"><b>Price:</b> {{ result[7] }}</p>
+        </div>
+    </div>
+
+
+
+{% endblock %}

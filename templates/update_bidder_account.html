@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %}Update Profile{% endblock %}
+{% block mainContent %}
+
+<div>
+    <h3>Update Account Information</h3>
+    <form action="/update_bidder_account" method="POST">
+            <div class="form-group">
+                <label for="FirstName">First Name:</label>
+                <input type="text" name="FirstName" required class="form-control" value="{{ biddersTable[0] }}">
+
+                <label for="LastName">Last Name:</label>
+                <input type="text" name="LastName" required class="form-control" value="{{ biddersTable[1] }}">
+
+                <label for="Gender">Gender:</label>
+                <input type="text" name="Gender" required class="form-control" value="{{ biddersTable[2] }}">
+
+                <label for="Age">Age:</label>
+                <input type="text" name="Age" required class="form-control" value="{{ biddersTable[3] }}">
+
+                <label for="Major">Major:</label>
+                <input type="text" name="Major" required class="form-control" value="{{ biddersTable[4] }}">
+
+                <a href="bidder_account"><button type="submit" class="btn btn-primary">Update</button></a>
+            </div>
+
+    </form>
+</div>
+
+{% endblock %}

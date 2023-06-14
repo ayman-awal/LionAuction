@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block mainContent %}
+    <h2>Edit Item:</h2>
+
+    <div>
+        <form action="/editListing" method="POST">
+            <div class="form-group">
+                <label for="AuctionTitle">Auction Title:</label>
+                <input type="text" name="AuctionTitle" required class="form-control" value="{{ result[3] }}">
+
+                <label for="ProductName">Product Name:</label>
+                <input type="text" name="ProductName" required class="form-control" value="{{ result[4] }}">
+
+                <label for="Category">Category:</label>
+                <select name="Category" required class="form-control">
+                    {% for cat in categories %}
+                        <option value="{{ cat }}">{{ cat }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="Quantity">Quantity:</label>
+                <input type="text" name="Quantity" required class="form-control" value="{{ result[6] }}">
+
+                <label for="ReservePrice">Reserve Price:</label>
+                <input value="$" type="text" name="ReservePrice" required class="form-control" value="{{ result[7] }}">
+
+                <label for="MaxBids">Max Bids:</label>
+                <input type="text" name="MaxBids" required class="form-control" value="{{ result[8] }}">
+
+                <label for="ProductDescription">Product Description:</label>
+                <textarea name="ProductDescription" required class="form-control">{{ result[5] }}</textarea>
+
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

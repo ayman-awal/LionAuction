@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block title %}Account Page{% endblock %}
+{% block mainContent %}
+    <h2>Account Information</h2>
+<br>
+    <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+        <h3 style="font-size: 24px; margin-top: 0;">Personal Information</h3>
+        <h5 style="font-size: 18px; margin: 5px 0;">First name: {{ biddersTable[0] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Last name: {{ biddersTable[1] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Gender: {{ biddersTable[2] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Age: {{ biddersTable[3] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Major: {{ biddersTable[4] }}</h5>
+    </div>
+<br>
+    <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+        <h3 style="font-size: 24px; margin-top: 0;">Payment Information</h3>
+        <h5 style="font-size: 18px; margin: 5px 0;">Credit Card Number: {{ cardContent[0] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Card Type: {{ cardContent[1] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Expiry Month: {{ cardContent[2] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Expiry Year: {{ cardContent[3] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Security Code: {{ cardContent[4] }}</h5>
+    </div>
+<br>
+    <div style="border: 2px solid #ccc; padding: 10px; margin-bottom: 20px;">
+        <h3>Address</h3>
+        <h5 style="font-size: 18px; margin: 5px 0;">Street Name: {{ addressContent[2] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Street Number: {{ addressContent[1] }}</h5>
+        <h5 style="font-size: 18px; margin: 5px 0;">Zipcode: {{ addressContent[0] }}</h5>
+    </div>
+
+    <a class="btn btn-primary" href="update_bidder_account">Update Information</a>
+
+
+
+{% endblock %}
+
+

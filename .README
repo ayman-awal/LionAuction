@@ -1,0 +1,80 @@
+When the user gets to the login page the user will have the option to choose
+what type of user they would like to login as; either bidder, seller or
+helpDesk.
+
+After inserting username and password the user will land on the appropriate
+bidder or seller homepage along with a couple of options such as category browsing,
+account information, etc as well as option to switch roles between sellers
+and bidders. As a bidder the user will be able to browse through the categories
+and check out any products they may like. As a seller the user is able to view
+and update account information, view,add,delete listings.
+
+All the csv files are already loaded onto the databases and they have already been created.
+Other than that, all HTML files are stored in a file called "templates" and there is one
+javascript file used to pass the Listing_ID value from the form to one of the routes.
+
+The routing functions:
+Most of these have POST and GET Methods.
+
+@app.route('/')
+def index():
+
+@app.route('/checkSell', methods=['GET', 'POST'])
+def checkSell():
+
+@app.route('/checkBid', methods=['GET', 'POST'])
+def checkBid():
+
+@app.route('/myBids', methods=['GET', 'POST'])
+def myBids():
+
+@app.route('/item/<data>', methods=['GET', 'POST'])
+def item(data):
+
+@app.route('/categories', methods=['GET', 'POST'])
+def categories():
+
+@app.route('/update_bidder_account', methods=['GET', 'POST'])
+def update_bidder_account():
+
+@app.route('/bidder_account', methods=['GET', 'POST'])
+def bidder_account():
+
+def getID():
+
+@app.route('/updateVendorAccount', methods=['GET', 'POST'])
+def updateVendorAccount():
+
+@app.route('/updateSellersAccount', methods=['GET', 'POST'])
+def updateSellersAccount():
+
+@app.route('/sellersAccount', methods=['GET', 'POST'])
+def sellersAccount():
+
+@app.route('/sellers_myListings', methods=['GET', 'POST'])
+def sellers_myListings():
+
+@app.route('/deleteListing', methods=['GET', 'POST'])
+def deleteListing():
+
+@app.route('/process', methods=['GET', 'POST'])
+def process():
+
+@app.route('/editListing', methods=['GET', 'POST'])
+def editListing():
+
+@app.route('/sellersHome', methods=['GET', 'POST'])
+def sellersHome():
+
+@app.route('/sellersListing', methods=['GET', 'POST'])
+def sellersListing():
+
+@app.route('/failed')
+
+@app.route('/biddersHome')
+
+@app.route('/login', methods=['POST', 'GET'])
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block mainContent %}
+<div class="container-sm">
+    <div class="card-body" align="center">
+        <form action="/login" method="POST">
+            <select name="userType" id="userType">
+                <option value="Bidders">Bidder</option>
+                <option value="Sellers">Seller</option>
+                <option value="HelpDesk">HelpDesk</option>
+            </select>
+
+        <h2 class="card-title">Enter Your Credentials</h2>
+
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" name="Username" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" name="Password" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a class="btn btn-success" href="/" role="button">Go Back</a>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
+
